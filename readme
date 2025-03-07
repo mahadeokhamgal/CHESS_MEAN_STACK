@@ -1,0 +1,59 @@
+Chess App.
+
+# Live session - https://excalidraw.com/#room=0f08d53a928994754044,cYKwApQlMeTosanYR9BAKw
+
+# Client
+ Registration. M3
+ Login. M3
+ OAuth2 / JWT
+ Inventory. M1
+ Play Offline. M2
+ Play online. M2
+ Themes.
+ Socketio.
+ Service Worker.
+ State-Management - Signal, NGRX, Shared service/Subjects, Events.
+ Http interceptor
+ Angular Workspace
+ Ag-grid
+ ngx-formly
+ Global Error Handling (Client-Side)
+ Unit Testing, Integration Testing, E2E Testing
+ CI/CD Pipeline(server and client)
+ Docker/Kubernetes
+ PWA support.
+
+# Server
+ Socketio.
+ Redis/cacheserver.
+ Centralized Logging - ELK Stack, Prometheus, or a logging service
+ Monitoring / Alerts (e.g., Prometheus, Grafana)
+ Health Check Endpoints
+ Middleware to set version cookie to each reasponse.
+ Error handler middleware in case anything goes wrong.
+ Api's to third party server.
+ Messaging service. e.g Kafka., using socketio, using apis.
+ Horizontal scaling - Load balancers
+ Rate Limiting
+ Data Encryption - (client and server)
+ CSRF Protection'
+ Data validation (e.q. JOI)
+ Cache Invalidations
+ API Versioning.
+ API Gateway
+ User Analytics (Google Analytics or Mixpanel)
+
+# DataBases
+ # Data Backup and Recovery
+
+ # MongoDB
+  Aggregate Pipeline.
+  
+ # PosgreSQL
+  Indexing
+  Functions
+  Views
+  Foreign Keys.
+  Primary Keys.
+
+# GIT
