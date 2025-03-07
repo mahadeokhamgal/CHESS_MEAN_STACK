@@ -1,0 +1,2 @@
+Creating Worspace - ng new <workspaceName> --create-application=false --skip-git
+Creating app - ng generate application <appName>

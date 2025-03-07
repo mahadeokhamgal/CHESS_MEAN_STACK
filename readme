@@ -4,6 +4,7 @@ Chess App.
 
 # Client
  Registration. M3
+ Authguards.
  Login. M3
  OAuth2 / JWT
  Inventory. M1
@@ -57,3 +58,14 @@ Chess App.
   Primary Keys.
 
 # GIT
+
+# MFEs
+Game Board (MFE1)
+profile (MFE2)
+Game Lobby (MFE3)
+Online Multiplayer (MFE4)
+Game AI (MFE5)
+Game History and Replays (MFE6)
+Themes & UI Customization (MFE7)
+Notifications and Chat (MFE8)
+Leaderboards & Tournaments (MFE9)
