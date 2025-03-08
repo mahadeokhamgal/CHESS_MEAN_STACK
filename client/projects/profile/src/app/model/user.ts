@@ -1,9 +1,9 @@
 import { Rank } from "./rank";
 
 export interface User {
-    name: string,
-    rating: number,
+    name: String,
+    rating: Number,
     rank: Rank,
     registerDate: Date,
-    email: string,
+    email: String,
 }
