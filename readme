@@ -79,3 +79,8 @@ Game History and Replays (MFE6)
 Themes & UI Customization (MFE7)
 Notifications and Chat (MFE8)
 Leaderboards & Tournaments (MFE9)
+
+# .env
+JWT_TOKEN_KEY = "SECRETE_AUTHOR_$%^"
+MONGO_URL = "mongodb://localhost:27017"
+MONGO_DB = "/user"

@@ -1,18 +1,19 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 
-const registerRoute = require('./routes/register.ts');
-import { logger } from './util/logger.ts';
-import { globalErrorHandler } from './util/globalErrorHandler.ts';
-
+import { registerRoute } from './routes/register.js';
+import { logger } from './util/logger.js';
+import { globalErrorHandler } from './util/globalErrorHandler.js';
+import { connectMongo } from './util/connections.js';
 const app = express();
 const port = 3000;
 
+connectMongo();//this is to connect to mongodb.
 app.use(express.json());
 app.use(logger);//To log all incoming requests.
 
 app.use('/register', registerRoute);//make sure in future that this is to handle ddos attack.
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (req, res) => {
     res.send('Hello, TypeScript and Express!');
 });
 
