@@ -29,7 +29,9 @@ export class RegisterComponent {
       name: new FormControl(this.user.name,
         [Validators.required, Validators.minLength(4)]),
       rank: new FormControl(this.user.rank),
-      email: new FormControl(this.user.email, Validators.required)
+      email: new FormControl(this.user.email, Validators.required),
+      password: new FormControl('', [Validators.minLength(8), Validators.maxLength(16)]),
+      cpassword: new FormControl('', [Validators.minLength(8), Validators.maxLength(16)])//add custom validator to match this field with password
     });
     
   }
