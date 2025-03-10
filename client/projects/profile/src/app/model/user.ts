@@ -6,4 +6,5 @@ export interface User {
     rank: Rank,
     registerDate: Date,
     email: String,
+    password?: string
 }
