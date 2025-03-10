@@ -33,7 +33,6 @@ export class RegisterComponent {
       password: new FormControl('', [Validators.minLength(8), Validators.maxLength(16)]),
       cpassword: new FormControl('', [Validators.minLength(8), Validators.maxLength(16)])//add custom validator to match this field with password
     });
-    
   }
 
   ngOnInit() {

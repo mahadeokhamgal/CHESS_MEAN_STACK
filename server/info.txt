@@ -1,0 +1,9 @@
+API - 
+//URL - http://localhost:3000/register 
+// method - POST.
+{
+    "name": "mahadeo",
+    "rank": "CM",
+    "email": "mahadeo@email.com",
+    "password": "root"
+}
