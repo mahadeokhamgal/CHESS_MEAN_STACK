@@ -3,26 +3,27 @@
 @import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 // Styling for form controls when the field is invalid
-.ng-invalid
+input.ng-invalid
   border-color: #dc3545 !important   // Red border for invalid fields
-  background-color: #f8d7da         // Light red background for invalid input
   &:focus
     border-color: #c82333           // Darker red border on focus
 
 // Error message container for invalid fields
-.ng-invalid.ng-touched
+input.ng-invalid.ng-touched
   + .invalid-feedback
     display: block      // Show error message when the field is invalid and touched
-    color: #dc3545      // Red text for error messages
     font-size: 0.875rem  // Smaller font size for error messages
     margin-top: 0.25rem  // Some space above the error message
 
-// Optional: Styling the label of the invalid input
-.ng-invalid + label
-  color: #dc3545  // Change label color to red when input is invalid
-  font-weight: bold  // Bold label to indicate error
 
 // Optional: Styling the input when it is focused and invalid
-.ng-invalid:focus
+input.ng-invalid:focus
   border-color: #c82333  // Darker red when focused on an invalid input
   box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25)  // Subtle red shadow to highlight the invalid input
+
+
+div
+    form
+        background-color:#eee
+        border: 1px solid black
+        border-radius: 2%

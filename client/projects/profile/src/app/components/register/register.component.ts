@@ -19,7 +19,7 @@ export class RegisterComponent {
   public registerForm: FormGroup;
   public user: User;
   public ranks: String[];
-  public userKeys: String[];
+
   constructor(public apiService: ApiServiceService, public router: Router, public alert: AlertsService) {
     this.user = {
       name: "Untitled ...",
@@ -28,14 +28,6 @@ export class RegisterComponent {
       email: '',
       registerDate: new Date()
     };
-
-    this.userKeys = [
-      "name",
-      "ratingname",
-      "rankname",
-      "registerDatename",
-      "emailname",
-    ]
 
     this.ranks = Object.values(Rank);
 
