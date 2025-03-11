@@ -50,14 +50,13 @@ export class LoginComponent {
         this.alert.showSuccessMessage(`Successfully Logged in! Welcome ${name}`);//To do , save the user details as state using .
         this.store.dispatch(setUser({ user: { name, rank, rating } }));
         
-        // this.router.navigate(['welcome'])
-        //   .then(() => {
-        //     console.log("routed successfully to welcome route");
-        //   })
-        //   .catch((err) => {
-        //     console.log("error with navigating to welcome page");
-
-        //   })
+        this.router.navigate(['users'])//to do , this is based on user role on which route to route to.
+          .then(() => {
+            console.log("routed successfully to welcome route");
+          })
+          .catch((err) => {
+            console.log("error with navigating to welcome page");
+          })
       }, (err) => {
         if(err.status == 401) {
           this.alert.showErrorMessage("Wrong password!")
