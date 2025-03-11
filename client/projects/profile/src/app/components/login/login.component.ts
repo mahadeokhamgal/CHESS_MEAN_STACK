@@ -44,19 +44,19 @@ export class LoginComponent {
     this.apiService.post(`${CONFIG.SERVER_URL}/login`, postObj)
       .subscribe((data) => {
         console.log("API completed", data);
-        this.alert.showSuccessMessage("Successfully Logged in!");
+        const { name, rank, rating } = data;
+        this.alert.showSuccessMessage(`Successfully Logged in! Welcome ${name}`);//To do , save the user details as state using .
+        // this.router.navigate(['welcome'])
+        //   .then(() => {
+        //     console.log("routed successfully to welcome route");
+        //   })
+        //   .catch((err) => {
+        //     console.log("error with navigating to welcome page");
 
-        this.router.navigate(['welcome'])
-          .then(() => {
-            console.log("routed successfully to welcome route");
-          })
-          .catch((err) => {
-            console.log("error with navigating to welcome page");
-
-          })
+        //   })
       }, (err) => {
-        console.log("Error loggin in", err.error.error);
-        this.alert.showErrorMessage("Error Loggin in" + err.error.error)
+        console.log("Error loggin in", err.error.error || err.error.message);
+        this.alert.showErrorMessage("Error Loggin in" + err.error.error || err.error.message)
       })
   }
 }

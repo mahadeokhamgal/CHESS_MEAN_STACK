@@ -45,6 +45,7 @@ Creating app - ng generate application <appName>
  Cache Invalidations
  API Versioning.
  API Gateway
+ Password Encryption.
  User Analytics (Google Analytics or Mixpanel)
   - steps
   mkdir server

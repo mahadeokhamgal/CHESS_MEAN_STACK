@@ -8,7 +8,7 @@ const route = express.Router();
 route.post('/', async (req, res) => {
   try {
     const { name, rank, rating, email, password } = req.body;
-    console.log("name, rank, rating, email, password", name, rank, rating, email, password);
+    console.log("name, rank, rating, email, password", name, rank, rating, email, password);//To to - Encrypt password being store in db.
 
     const result = userSchema.validate(req.body);
     if (result.error) {
