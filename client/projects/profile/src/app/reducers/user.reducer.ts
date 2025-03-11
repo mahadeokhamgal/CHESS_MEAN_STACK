@@ -6,6 +6,7 @@ export interface User {
   name: string;
   rating: number;
   rank?: Rank;
+  createdDate: Date
 }
 
 export interface UserState {
@@ -13,7 +14,7 @@ export interface UserState {
 }
 
 export const initialState: UserState = {
-  user: { name: 'Untitled...', rating: 800, rank: Rank.BEGGINER },
+  user: { name: 'Untitled...', rating: 800, rank: Rank.BEGGINER, createdDate: new Date() },
 };
 
 export const userReducer = createReducer(

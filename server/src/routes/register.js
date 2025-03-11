@@ -15,8 +15,8 @@ route.post('/', async (req, res) => {
       res.status(400).json({ error: result.error.details[0].message });
       return;
     }
-
-    const newUser = new User({ name, rank, rating, email, password });
+    const createdDate = new Date();
+    const newUser = new User({ name, rank, rating, email, password, createdDate });
     await newUser.save();
     res.status(201).json({message: "User created successfully"});
   } catch (error) {

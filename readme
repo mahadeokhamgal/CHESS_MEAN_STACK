@@ -87,3 +87,6 @@ PORT = 3000
 
 MONGO_URL = "mongodb://localhost:27017"
 MONGO_DB = "/user"
+
+# Open problems
+JWT Cookie not getting saved in cookies section.

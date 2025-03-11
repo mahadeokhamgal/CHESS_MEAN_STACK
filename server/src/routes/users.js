@@ -15,8 +15,8 @@ route.get('/', async (req, res) => {
             console.log("create JWT and end to Client");//To do - Decrypt db password, match with user password.
 
             res.status(200).json({ users: doc.map(rec => {
-                const { name, rank, rating, email } = rec._doc;
-                return { name, rank, rating, email }
+                const { name, rank, rating, email, createdDate } = rec._doc;
+                return { name, rank, rating, email, createdDate }
             } ) });
         }
     } catch (err) {

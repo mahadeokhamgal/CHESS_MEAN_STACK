@@ -7,6 +7,7 @@ import { AgGridAngular } from 'ag-grid-angular';
 import { ColDef, GridApi, GridOptions, GridReadyEvent } from 'ag-grid-community';
 
 import { AllCommunityModule, ModuleRegistry } from "ag-grid-community";
+import { usersColumnDef } from '../../model/user.columns';
 
 ModuleRegistry.registerModules([AllCommunityModule]);
 
@@ -20,40 +21,11 @@ export class UserinventoryComponent {
   public users: User[];
   public gridOptions: GridOptions<any>;
   private gridApi!: GridApi;
-  public columnDefs: ColDef[] = [
-    {
-      headerCheckboxSelection: true,
-      checkboxSelection: true,    
-      width: 50
-    },
-    {
-      field: 'name',
-      filter: 'agTextColumnFilter',
-    },
-    {
-      field: 'rank',
-      filter: 'agTextColumnFilter',
-    },
-    {
-      field: 'rating',
-      filter: 'agNumberColumnFilter',
-    },
-    {
-      field: 'email',
-      filter: 'agTextColumnFilter',
-    },
-    {
-      field: 'registerDate',
-      filter: 'agDateColumnFilter'
-    }
-  ];
+  public columnDefs: ColDef[] = usersColumnDef;
   
   constructor(private apiService: ApiServiceService, private alert: AlertsService) {
     this.users = [];
     this.gridOptions = <GridOptions>{
-      // enableSorting: true,
-      // enable filtering 
-      // enableFilter: true,
       columnDefs: this.columnDefs,
       rowData: this.users
     };

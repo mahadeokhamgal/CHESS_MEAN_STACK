@@ -6,7 +6,8 @@ const userSchema = new mongoose.Schema({
   rank: { type: String, required: true },
   rating: { type: Number, required: true },
   email: { type: String, required: true, unique: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  createdDate: { type: Date, required : true }
 });
 
 
