@@ -89,4 +89,7 @@ MONGO_URL = "mongodb://localhost:27017"
 MONGO_DB = "/user"
 
 # Open problems
-JWT Cookie not getting saved in cookies section.
+Error on console on ag-grid load.
+
+# To do
+Use SSR to use pagination API's.

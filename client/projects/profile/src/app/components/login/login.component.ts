@@ -43,7 +43,7 @@ export class LoginComponent {
       return;
     }
 
-    this.apiService.post(`${CONFIG.SERVER_URL}/login`, postObj)
+    this.apiService.post(`${CONFIG.SERVER_URL}/login`, postObj, { withCredentials: true })
       .subscribe((data) => {
         console.log("API completed", data);
         const { name, rank, rating, createdDate } = data;

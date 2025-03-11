@@ -13,7 +13,11 @@ dotenv.config();
 const app = express();
 
 connectMongo();
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:4200',
+  credentials: true,// Allow cookies to be sent
+}));
+
 app.use(express.json());
 app.use(logger);//To log all incoming requests. //make sure in future that this is to handle ddos attack, i.e. not to let process request if ddos.
 

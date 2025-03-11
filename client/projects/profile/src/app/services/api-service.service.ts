@@ -16,7 +16,7 @@ export class ApiServiceService {
   }
 
   public post(url: string, body: User,  headers: object = {}): Observable<any> {
-    return this.http.post(url, body);
+    return this.http.post(url, body, headers);
   }
 
 }

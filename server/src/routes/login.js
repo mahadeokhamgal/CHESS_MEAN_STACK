@@ -40,7 +40,7 @@ route.post('/', async (req, res) => {
             } else {
                 const token = createJWT({ name, rank, rating, email});
                 const options = {
-                    // httpOnly: true,
+                    httpOnly: true,
                     // secure: true,  // Only works on HTTPS
                     maxAge: 1000 * 60 * 60 * 24,
                     // sameSite: 'Strict'
