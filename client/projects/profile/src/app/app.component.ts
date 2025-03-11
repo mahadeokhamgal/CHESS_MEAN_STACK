@@ -1,18 +1,33 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ApiServiceService } from './services/api-service.service';
+import { User, UserState } from './reducers/user.reducer';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { AsyncPipe, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NgIf, AsyncPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass'
 })
 export class AppComponent {
   title = 'profile';
-  
-  constructor(private apiServiceService: ApiServiceService) {
-    console.log("app component constructor");  
+  user$: Observable<User | null> | undefined;
+
+  constructor(private store: Store<{ user: UserState }>) {
+    console.log("app component constructor");
+  }
+
+  ngOnInit(): void {
+    this.user$ = this.store.select(state => state?.user?.user);
+    console.log(this.user$);
+    
+    this.user$.subscribe((data) => {
+      console.log("state update to app component");
+      
+    })
   }
 
   ngOnChanges() {
@@ -23,11 +38,5 @@ export class AppComponent {
     console.warn("ngdocheck detected in app component");
   }
 
-  ngAfterViewInit() {
-    this.apiServiceService.get('https://jsonplaceholder.typicode.com/todos/1')
-    .subscribe((data: any) => {
-      console.log(data);
-      
-    })
-  }
+  ngAfterViewInit() {}
 }

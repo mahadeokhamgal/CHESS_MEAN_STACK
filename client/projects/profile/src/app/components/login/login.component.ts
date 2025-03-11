@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { AlertsService } from '../../services/alerts.service';
 import { Rank } from '../../model/rank';
 import { CONFIG } from '../../../config/config';
+import { Store } from '@ngrx/store';
+import { setUser } from '../../reducers/user.actions';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +19,7 @@ export class LoginComponent {
   public loginForm: FormGroup;
   public user: User;
 
-  constructor(public apiService: ApiServiceService, public router: Router, public alert: AlertsService) {
+  constructor(public apiService: ApiServiceService, public router: Router, public alert: AlertsService, private store: Store) {
     this.user = {
       name: "Untitled ...",
       rating: 800,
@@ -46,6 +48,8 @@ export class LoginComponent {
         console.log("API completed", data);
         const { name, rank, rating } = data;
         this.alert.showSuccessMessage(`Successfully Logged in! Welcome ${name}`);//To do , save the user details as state using .
+        this.store.dispatch(setUser({ user: { name, rank, rating } }));
+        
         // this.router.navigate(['welcome'])
         //   .then(() => {
         //     console.log("routed successfully to welcome route");
