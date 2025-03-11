@@ -93,6 +93,4 @@ Error on console on ag-grid load.
 
 # To do
 Use SSR to use pagination API's.
-Make users path accessible only for admin access.
-Show Additional Column Access.
 Token refreshing to 10 mins.

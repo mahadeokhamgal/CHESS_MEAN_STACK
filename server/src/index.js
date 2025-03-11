@@ -1,5 +1,7 @@
 import express from 'express';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
+
 import { registerRoute } from './routes/register.js';
 import { loginRoute } from './routes/login.js';
 import { usersRoute } from './routes/users.js';
@@ -18,6 +20,7 @@ app.use(cors({
   credentials: true,// Allow cookies to be sent
 }));
 
+app.use(cookieParser());
 app.use(express.json());
 app.use(logger);//To log all incoming requests. //make sure in future that this is to handle ddos attack, i.e. not to let process request if ddos.
 

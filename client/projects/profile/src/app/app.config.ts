@@ -1,9 +1,9 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { ApplicationConfig, inject, provideZoneChangeDetection } from '@angular/core';
+import { provideRouter, Router } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { HttpEventType, withInterceptors } from '@angular/common/http';
+import { HttpEventType, HttpStatusCode, withInterceptors } from '@angular/common/http';
 import { ApiServiceService } from './services/api-service.service';
 import { provideHttpClient } from '@angular/common/http';
 import { HttpEvent, HttpHandlerFn, HttpRequest } from '@angular/common/http';
@@ -35,9 +35,18 @@ export function httpInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn):
 }
 
 export function responseInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn): Observable<HttpEvent<unknown>> {
-  return next(req).pipe(tap(event => {
+  const router : Router = inject(Router);
+  
+  return next(req).pipe(tap((event) => {
     if (event.type === HttpEventType.Response) {
       console.log(req.url, 'returned a response with status', event.status);
+      if([HttpStatusCode.Unauthorized, HttpStatusCode.Forbidden].includes(event.status)) {
+        router.navigate(['login'])
+      }
+    }
+  }, (error) => {
+    if (error.status === HttpStatusCode.Unauthorized || error.status === HttpStatusCode.Forbidden) {
+      router.navigate(['login']);
     }
   }));
 }
