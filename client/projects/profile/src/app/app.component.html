@@ -1,7 +1,8 @@
 <div *ngIf="user$ | async as user; else noUser" class="app-header row p-3">
-    <div class="col-4">Name: {{ user.name }}</div>
-    <div class="col-4 text-center">Rating: {{ user.rating }}</div>
-    <div class="col-4 text-end">Rank: {{ user.rank }}</div>
+    <div class="col-3">Name: {{ user.name }}</div>
+    <div class="col-3 text-center">Rating: {{ user.rating }}</div>
+    <div class="col-3 text-end">Rank: {{ user.rank }}</div>
+    <div class="col-3 text-end">Role: {{ user.access }}</div>
 </div>
 <ng-template #noUser>
     <p>No user data available. Please log in.</p>

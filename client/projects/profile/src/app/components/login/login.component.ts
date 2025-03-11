@@ -46,9 +46,9 @@ export class LoginComponent {
     this.apiService.post(`${CONFIG.SERVER_URL}/login`, postObj, { withCredentials: true })
       .subscribe((data) => {
         console.log("API completed", data);
-        const { name, rank, rating, createdDate } = data;
+        const { name, rank, rating, createdDate, access } = data;
         this.alert.showSuccessMessage(`Successfully Logged in! Welcome ${name}`);//To do , save the user details as state using .
-        this.store.dispatch(setUser({ user: { name, rank, rating, createdDate } }));
+        this.store.dispatch(setUser({ user: { name, rank, rating, createdDate, access } }));
         
         this.router.navigate(['users'])//to do , this is based on user role on which route to route to.
           .then(() => {

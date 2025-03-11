@@ -34,7 +34,7 @@ route.post('/', async (req, res) => {
             console.log(doc._doc);
             console.log("create JWT and end to Client");//To do - Decrypt db password, match with user password.
             
-            const { name, rank, rating, email, password } = doc._doc;
+            const { name, rank, rating, email, password, access } = doc._doc;
             if(password != inputPassword) {
                 res.status(401).json({message : "Unauthorized!"});
             } else {
@@ -42,10 +42,10 @@ route.post('/', async (req, res) => {
                 const options = {
                     httpOnly: true,
                     // secure: true,  // Only works on HTTPS
-                    maxAge: 1000 * 60 * 60 * 24,
+                    maxAge: 1000 * 10,
                     // sameSite: 'Strict'
                   }
-                res.status(200).cookie('jwt_token', token, options).json({ message: "Login successfull", name, rank, rating });
+                res.status(200).cookie('jwt_token', token, options).json({ message: "Login successfull", name, rank, rating, access });
             }
             
         }

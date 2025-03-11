@@ -7,7 +7,8 @@ const userSchema = new mongoose.Schema({
   rating: { type: Number, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  createdDate: { type: Date, required : true }
+  createdDate: { type: Date, required : true },
+  access: { type: String, required: false, default: 'chess-player' }
 });
 
 
