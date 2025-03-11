@@ -5,6 +5,7 @@ import { User, UserState } from './reducers/user.reducer';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AsyncPipe, NgIf } from '@angular/common';
+import { selectUser } from './reducers/user.selector';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,7 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.user$ = this.store.select(state => state?.user?.user);
+    this.user$ = this.store.select(selectUser);
     console.log(this.user$);
     
     this.user$.subscribe((data) => {

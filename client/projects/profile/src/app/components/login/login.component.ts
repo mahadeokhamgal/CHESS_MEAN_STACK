@@ -59,8 +59,12 @@ export class LoginComponent {
 
         //   })
       }, (err) => {
-        console.log("Error loggin in", err.error.error || err.error.message);
-        this.alert.showErrorMessage("Error Loggin in" + err.error.error || err.error.message)
+        if(err.status == 401) {
+          this.alert.showErrorMessage("Wrong password!")
+        } else {
+          console.log("Error loggin in", (err.error.error ?? err.error.message));
+          this.alert.showErrorMessage("Error Loggin in" + (err.error.error ?? err.error.message))
+        }
       })
   }
 }

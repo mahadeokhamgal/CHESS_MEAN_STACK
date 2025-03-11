@@ -9,7 +9,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { HttpEvent, HttpHandlerFn, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { provideState, provideStore } from '@ngrx/store';
-import { authReducer } from './reducers/user.reducer';
+import { userReducer } from './reducers/user.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,7 +18,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([loggingInterceptor])),
     ApiServiceService,
     provideStore(),
-    provideState({ name: 'auth', reducer: authReducer })
+    provideState({ name: 'user', reducer: userReducer })
   ]
 };
 

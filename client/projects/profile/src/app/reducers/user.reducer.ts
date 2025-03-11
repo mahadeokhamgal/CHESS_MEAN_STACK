@@ -16,7 +16,7 @@ export const initialState: UserState = {
   user: { name: 'Untitled...', rating: 800, rank: Rank.BEGGINER },
 };
 
-export const authReducer = createReducer(
+export const userReducer = createReducer(
   initialState,
   on(setUser, (state, { user }) => ({ ...state, user }))
 );
