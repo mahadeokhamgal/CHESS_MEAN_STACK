@@ -1,11 +1,11 @@
 <app-navbar></app-navbar>
-<div *ngIf="user$ | async as user; else noUser" class="app-header row p-3">
-    <div class="col-3">Name: {{ user.name }}</div>
+<!-- <div *ngIf="user$ | async as user; else noUser" class="app-header row p-3">
+    <div class="col-3 text-start" appBackgroundcolor>Name: {{ user.name }}</div>
     <div class="col-3 text-center" appBackgroundcolor> Rating: {{ user.rating }} </div>
-    <div class="col-3 text-end" appBackgroundcolor> Rank: {{ user.rank }} </div>
+    <div class="col-3 text-center" appBackgroundcolor> Rank: {{ user.rank }} </div>
     <div class="col-3 text-end" appBackgroundcolor> Role: {{ user.access }} </div>
-</div>
+</div> 
 <ng-template #noUser>
     <p>No user data available. Please log in.</p>
-</ng-template>
+</ng-template> -->
 <router-outlet />

@@ -18,18 +18,10 @@ export class AppComponent {
   title = 'profile';
   user$: Observable<User | null> | undefined;
 
-  constructor(private store: Store<{ user: UserState }>) {
-    console.log("app component constructor");
-  }
+  constructor(private store: Store<{ user: UserState }>) {}
 
   ngOnInit(): void {
     this.user$ = this.store.select(selectUser);
-    console.log(this.user$);
-    
-    this.user$.subscribe((data) => {
-      console.log("state update to app component");
-      
-    })
   }
 
   ngOnChanges() {

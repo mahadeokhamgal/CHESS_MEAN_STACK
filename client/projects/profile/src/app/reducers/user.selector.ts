@@ -15,3 +15,8 @@ export const selectIsAdmin = createSelector(
   selectAuthState,
   (state: UserState) => state.user?.access == ACCESS.ADMIN
 )
+
+export const selectIsChessUser = createSelector(
+  selectAuthState,
+  (state: UserState) => state.user?.access == ACCESS.CHESS_PLAYER || state.user?.access == ACCESS.ADMIN
+)
