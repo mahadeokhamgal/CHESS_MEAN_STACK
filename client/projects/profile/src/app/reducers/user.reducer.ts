@@ -15,7 +15,7 @@ export interface UserState {
 }
 
 export const initialState: UserState = {
-  user: { name: 'Untitled...', rating: 800, rank: Rank.BEGGINER, createdDate: new Date(), access: 'chess-player' },
+  user: null
 };
 
 export const userReducer = createReducer(

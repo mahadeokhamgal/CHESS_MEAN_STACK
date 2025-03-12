@@ -94,3 +94,7 @@ Error on console on ag-grid load.
 # To do
 Use SSR to use pagination API's.
 Token refreshing to 10 mins.
+Passowrd complexity.
+Register button on login page.
+Home button.
+Can deactivate - User leaves game in between.

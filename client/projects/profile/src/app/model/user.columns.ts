@@ -21,12 +21,13 @@ export const usersColumnDef: ColDef[] = [
     {
         field: 'email',
         filter: 'agTextColumnFilter',
-        width: 400
+        width: 350
     },
     {
         field: 'createdDate',
         headerName: 'Registered Date',
-        filter: 'agDateColumnFilter'
+        filter: 'agDateColumnFilter',
+        width: 300
     },
     {
         field: 'access',

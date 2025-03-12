@@ -36,7 +36,9 @@
               "projects/profile/src/styles.sass",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
             "server": "projects/profile/src/main.server.ts",
             "prerender": true,
             "ssr": {

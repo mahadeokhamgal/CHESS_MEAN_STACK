@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ApiServiceService } from './services/api-service.service';
 import { User, UserState } from './reducers/user.reducer';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { selectUser } from './reducers/user.selector';
+import { BackgroundcolorDirective } from './directives/backgroundcolor.directive';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgIf, AsyncPipe],
+  imports: [RouterOutlet, NgIf, AsyncPipe, BackgroundcolorDirective, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass'
 })
