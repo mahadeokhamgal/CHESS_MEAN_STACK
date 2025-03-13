@@ -1,0 +1,7 @@
+<h3>{{gridLabel}} </h3>
+<ag-grid-angular 
+style="width: 100%; height: 100vh;" 
+[gridOptions]="gridOptions" 
+(gridReady)="onGridReady($event)"
+[rowData]="data"
+></ag-grid-angular>

@@ -6,11 +6,11 @@ import { Store } from '@ngrx/store';
 import { selectUser } from '../../reducers/user.selector';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
-import { GamePerformanceComponent } from '../game-performance/game-performance.component';
+import { UserProfileComponent } from '../user-profile/user-profile.component';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterModule, NgIf, AsyncPipe, GamePerformanceComponent],
+  imports: [MatDialogModule, RouterModule, NgIf, AsyncPipe],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.sass',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -18,15 +18,21 @@ import { GamePerformanceComponent } from '../game-performance/game-performance.c
 export class NavbarComponent {
   user$: Observable<User | null> | undefined;
 
-  constructor(private store: Store<{ user: UserState }>, private dialog: MatDialog) {}
+  constructor(private store: Store<{ user: UserState }>, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.user$ = this.store.select(selectUser);
   }
 
   openUserAnalytics(): void {
-    const dialogRef = this.dialog.open(GamePerformanceComponent, {
-
+    const dialogRef = this.dialog.open(UserProfileComponent, {
+      width: "1200px",
+      height: "600px",
+      data: {
+        profileName: 'DefaultUser',
+        registeredDate: new Date(),
+        isFriend: false
+      }
     })
 
     dialogRef.afterClosed().subscribe(result => {

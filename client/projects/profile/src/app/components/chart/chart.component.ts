@@ -25,13 +25,15 @@ export class ChartComponent {
   @Input()
   public chart: any;
   @Input()
-  public chartData: number[] = [];
+  public chartData!: number[];
   @Input()
-  public chartLables: string[] = [];
+  public chartLables!: string[];
   @Input()
-  public chartColors: any[] = [];
+  public chartColors!: any[];
   @Input()
   public chartType: string;
+  @Input()
+  public chartLabel!: string;
 
   constructor() {
 
@@ -49,7 +51,7 @@ export class ChartComponent {
           labels: this.chartLables,
           datasets: [
             {
-              label: 'My First Dataset',
+              label: this.chartLabel,
               data: this.chartData,
               borderWidth: 1,
               backgroundColor: this.getChartBackgroundColors(this.chartData.length),

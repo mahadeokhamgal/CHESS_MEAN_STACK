@@ -29,7 +29,7 @@
             </li>
         </ul>
         
-        <span *ngIf="user$ | async as user;" >
+        <span *ngIf="user$ | async as user;" (click)="openUserAnalytics()">
             <img src="chess-com.png" alt="Transparent Pawn" style="width: 40px;" />
             {{ user.name }}
         </span>
