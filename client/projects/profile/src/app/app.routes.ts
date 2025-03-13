@@ -57,7 +57,7 @@ export const chessUserRouteAuth: CanActivateFn = (
 export const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'users', component: UserinventoryComponent, canActivate: [adminRouteAuth] },
-    { path: 'home', component: HomeComponent, canActivate: [chessUserRouteAuth] },
+    { path: 'users', component: UserinventoryComponent, canActivate: [] },
+    { path: 'home', component: HomeComponent, canActivate: [] },
     { path: "**", redirectTo: 'login' }
 ];

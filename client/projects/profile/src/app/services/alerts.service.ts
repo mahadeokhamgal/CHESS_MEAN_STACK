@@ -9,7 +9,7 @@ export class AlertsService {
 
   showSuccessMessage(message: string = 'Your action was successful!') {
     this.snackBar.open(message, 'Close', {
-      duration: 5000, // 3 seconds
+      duration: 50000, // 3 seconds
       horizontalPosition: 'right',
       verticalPosition: 'top',
       panelClass: ['success-snackbar'],
@@ -18,7 +18,7 @@ export class AlertsService {
 
   showErrorMessage(message: string = 'There was an error!') {
     this.snackBar.open(message, 'Close', {
-      duration: 8000,
+      duration: 80000,
       horizontalPosition: 'right',
       verticalPosition: 'top',
       panelClass: ['error-snackbar'],

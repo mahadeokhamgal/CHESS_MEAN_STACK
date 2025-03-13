@@ -27,3 +27,40 @@ div
         background-color:#eee
         border: 1px solid black
         border-radius: 2%
+
+// Variables for colors
+$success-color: #4CAF50  // Green color for success
+$error-color: #F44336    // Red color for error
+$white-color: #ffffff    // White color for text
+
+// Success Snackbar Styling
+.success-snackbar
+  background-color: $success-color
+  color: $white-color
+  padding: 10px 20px
+  border-radius: 4px
+  font-size: 14px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  min-width: 300px
+
+// Error Snackbar Styling
+.error-snackbar
+  background-color: $error-color
+  color: $white-color
+  padding: 10px 20px
+  border-radius: 4px
+  font-size: 14px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  min-width: 300px
+
+// Close button styling (optional)
+.snackbar-close-btn
+  font-weight: bold
+  color: $white-color
+  cursor: pointer
+  margin-left: 10px
+  font-size: 16px
