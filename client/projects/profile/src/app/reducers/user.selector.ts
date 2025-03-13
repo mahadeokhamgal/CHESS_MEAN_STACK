@@ -1,6 +1,6 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { UserState } from './user.reducer';
-import { ACCESS } from '../model/access';
+import { ACCESS } from '../enums/access';
 
 export const selectUserState = createFeatureSelector<UserState>('user');
 

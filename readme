@@ -2,6 +2,12 @@ Chess App.
 
 # Live session - https://excalidraw.com/#room=0f08d53a928994754044,cYKwApQlMeTosanYR9BAKw
 
+To Start.
+client - npm run dev
+server - npm run dev
+mongo - net start mongoDB (windows, mongoDB was default process name)
+posgresql - 
+
 # Client
  Registration. M3
  Authguards.
@@ -24,6 +30,7 @@ Chess App.
  Docker/Kubernetes
  PWA support.
  adding chart using chart.js
+ Custom Elements.
  
 Steps - 
 Creating Worspace - ng new <workspaceName> --create-application=false --skip-git
@@ -97,6 +104,12 @@ Error on console on ag-grid load.
 Use SSR to use pagination API's.
 Token refreshing to 10 mins.
 Passowrd complexity.
-Register button on login page.
-Home button.
 Can deactivate - User leaves game in between.
+Connect to PosgreSQL - 
+Create Games Table
+Create collection(mongo) Friends to store fiends in array form.
+To Store User image in DB.
+Select and Download option for game archives.
+Single player feature.
+Multi player feature.
+Game engine integration like stockfish.

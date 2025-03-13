@@ -5,7 +5,7 @@ import { AlertsService } from '../../services/alerts.service';
 import { User } from '../../reducers/user.reducer';
 import { ColDef } from 'ag-grid-community';
 
-import { usersColumnDef } from '../../model/user.columns';
+import { usersColumnDef } from '../../columndefs/user.columns';
 import { AgGridComponent } from "../ag-grid/ag-grid.component";
 
 

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgFor } from '@angular/common';
-import { User } from '../../model/user';
-import { Rank } from '../../model/rank';
+import { User } from '../../interfaces/user';
+import { Rank } from '../../enums/rank';
 import { ApiServiceService } from '../../services/api-service.service';
 import { CONFIG } from '../../../config/config';
 import { Router } from '@angular/router';

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { User } from '../../model/user';
+import { User } from '../../interfaces/user';
 import { ApiServiceService } from '../../services/api-service.service';
 import { Router } from '@angular/router';
 import { AlertsService } from '../../services/alerts.service';
-import { Rank } from '../../model/rank';
+import { Rank } from '../../enums/rank';
 import { CONFIG } from '../../../config/config';
 import { Store } from '@ngrx/store';
 import { setUser } from '../../reducers/user.actions';

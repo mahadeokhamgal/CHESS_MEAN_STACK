@@ -1,4 +1,4 @@
-import { Rank } from "./rank";
+import { Rank } from "../enums/rank";
 
 export interface User {
     name: String,

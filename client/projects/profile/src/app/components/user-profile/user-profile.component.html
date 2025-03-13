@@ -11,5 +11,9 @@
     </div>
 </div>
 <div class="row">
-    
+    <app-ag-grid 
+    gridLabel="Game History" 
+    [data]="games" 
+    [columnDefs]="columns"
+    ></app-ag-grid>
 </div>

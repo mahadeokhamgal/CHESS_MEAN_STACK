@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { setUser } from './user.actions';
-import { Rank } from '../model/rank';
+import { Rank } from '../enums/rank';
 
 export interface User {
   name: string;
