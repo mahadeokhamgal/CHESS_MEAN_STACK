@@ -23,6 +23,8 @@ Chess App.
  CI/CD Pipeline(server and client)
  Docker/Kubernetes
  PWA support.
+ adding chart using chart.js
+ 
 Steps - 
 Creating Worspace - ng new <workspaceName> --create-application=false --skip-git
 Creating app - ng generate application <appName>

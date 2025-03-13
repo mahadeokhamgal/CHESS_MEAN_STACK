@@ -16,7 +16,7 @@ const app = express();
 
 connectMongo();
 app.use(cors({
-  origin: 'http://localhost:4200',
+  origin: 'http://localhost:57001',
   credentials: true,// Allow cookies to be sent
 }));
 

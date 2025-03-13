@@ -29,9 +29,10 @@
             </li>
         </ul>
         
-        <span *ngIf="user$ | async as user;">
+        <span *ngIf="user$ | async as user;" >
             <img src="chess-com.png" alt="Transparent Pawn" style="width: 40px;" />
-            {{ user.name }}</span>
+            {{ user.name }}
+        </span>
         <form class="form-inline ml-auto">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
