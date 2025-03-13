@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
 import { ChartData } from '../../model/chartModel';
 import { GameRecord } from '../../model/gameRecord.model';
-import { ArcElement, CategoryScale, Chart, Legend, LinearScale, LineController, LineElement, PointElement, Title, Tooltip } from 'chart.js';
+import { ArcElement, BarController, BarElement, CategoryScale, Chart, Legend, LinearScale, LineController, LineElement, PointElement, Title, Tooltip } from 'chart.js';
 
 Chart.register(
   LineController,
+  BarController,
   LinearScale,
   CategoryScale,
   Title,
   Tooltip,
   Legend,
   LineElement,
+  BarElement,
   PointElement,
   ArcElement
 );
@@ -23,27 +25,51 @@ Chart.register(
 })
 export class GamePerformanceComponent {
   public chart: any;
-  chartData: ChartData[] = [];
+  public chartData: number[];
+  public chartLables: string[];
+  chartColors : any[];
   constructor() {
-
+    this.chartColors = [
+      {"red":255, "blue": 99,"green": 132},
+      {"red":255, "blue": 159,"green": 64},
+      {"red":255, "blue": 205,"green": 86},
+      {"red":75, "blue": 192,"green": 192},
+      {"red":54, "blue": 162,"green": 235},
+      {"red":153, "blue": 102,"green": 255},
+      {"red":201, "blue": 203,"green": 207},
+    ];
+    this.chartData = [65, 59, 80, 81, 56, 55];
+    this.chartLables = ['January', 'February', 'March', 'April', 'May', 'June'];
   }
 
   ngOnInit() {
     this.createChart();
   }
 
+  getChartBackgroundColors(size: number) : string[] {
+    return this.chartColors.slice(0, size).map(color => {
+      return `rgba(${color.red}, ${color.blue}, ${color.green}, 0.2)`;
+    })
+  }
+
+  getChartBorderColors(size: number) : string[] {
+    return this.chartColors.slice(0, size).map(color => {
+      return `rgba(${color.red}, ${color.blue}, ${color.green})`;
+    })
+  }
+
   createChart(): void {
     this.chart = new Chart('game-performance-chart', {
-      type: 'line', // The type of chart (line, bar, pie, etc.)
+      type: 'bar',
       data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June'], // X-axis labels
+        labels: this.chartLables,
         datasets: [
           {
             label: 'My First Dataset',
-            data: [65, 59, 80, 81, 56, 55], // Data points for the chart
-            fill: false,
-            borderColor: 'rgb(75, 192, 192)',
-            tension: 0.1
+            data: this.chartData,
+            borderWidth: 1,
+            backgroundColor: this.getChartBackgroundColors(this.chartData.length),
+            borderColor: this.getChartBorderColors(this.chartData.length)
           }
         ]
       },
