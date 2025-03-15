@@ -10,7 +10,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgIf, AsyncPipe, BackgroundcolorDirective, NavbarComponent],
+  imports: [RouterOutlet, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass'
 })
@@ -25,11 +25,11 @@ export class AppComponent {
   }
 
   ngOnChanges() {
-    console.info("onchanges detected in app component !");
+    // console.info("onchanges detected in app component !");
   }
 
   ngDoCheck() {
-    console.info("ngdocheck detected in app component");
+    // console.info("ngdocheck detected in app component");
   }
 
   ngAfterViewInit() {}

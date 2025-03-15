@@ -7,9 +7,11 @@ import { Chess, Square } from 'chess.js'; // Import Chess.js
 export class ChessService {
 
   chess: Chess; // Instance of Chess.js game
+  previousFEN: string;
 
   constructor() {
     this.chess = new Chess();
+    this.previousFEN = this.chess.fen();
   }
 
   // Reset the game
@@ -19,13 +21,23 @@ export class ChessService {
 
   // Make a move
   makeMove(move: string) {
-    const result = this.chess.move(move);
-    return result ? this.chess.fen() : null; // Return updated FEN after move
+    this.previousFEN = this.chess.fen();
+    try {
+      const result = this.chess.move(move);
+      return result;
+    } catch(err) {
+      console.warn("Invalid move", move);
+    }
+    return null; // Return updated FEN after move
   }
 
   // Get the current board FEN (chess position)
   getFEN(): string {
     return this.chess.fen();
+  }
+
+  restorePreviousState() {
+    this.chess.load(this.previousFEN); // Load the previous valid FEN
   }
 
   // Check if the game is over
