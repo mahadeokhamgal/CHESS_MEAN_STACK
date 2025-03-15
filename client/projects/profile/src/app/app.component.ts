@@ -25,11 +25,11 @@ export class AppComponent {
   }
 
   ngOnChanges() {
-    console.warn("onchanges detected in app component !");
+    console.info("onchanges detected in app component !");
   }
 
   ngDoCheck() {
-    console.warn("ngdocheck detected in app component");
+    console.info("ngdocheck detected in app component");
   }
 
   ngAfterViewInit() {}

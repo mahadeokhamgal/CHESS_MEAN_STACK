@@ -9,6 +9,7 @@ import { selectIsAdmin, selectIsChessUser } from './reducers/user.selector';
 import { map, take } from 'rxjs';
 import { HomeComponent } from './components/home/home.component';
 import { AlertsService } from './services/alerts.service';
+import { ChessBoardComponent } from './components/chess-board/chess-board.component';
 
 export const adminRouteAuth: CanActivateFn = (
     next: ActivatedRouteSnapshot,
@@ -59,5 +60,6 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'users', component: UserinventoryComponent, canActivate: [adminRouteAuth] },
     { path: 'home', component: HomeComponent, canActivate: [chessUserRouteAuth] },
+    { path: 'play', component: ChessBoardComponent, canActivate: [chessUserRouteAuth] },
     { path: "**", redirectTo: 'login' }
 ];

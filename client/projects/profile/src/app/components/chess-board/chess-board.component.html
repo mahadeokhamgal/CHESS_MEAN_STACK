@@ -1,0 +1,9 @@
+<div>
+    <h2>Chess Game</h2>
+    <!-- <p>{{ this.getAscii() }}</p> -->
+    <div id="chess-board" style="width: 800px; height: 800px;">
+
+    </div>
+    <button (click)="resetGame()">Reset Game</button>
+    <p *ngIf="this.gameOver()">Game Over!</p>
+  </div>

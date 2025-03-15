@@ -34,10 +34,14 @@
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
               "projects/profile/src/styles.sass",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/chessground/assets/chessground.base.css",
+              "node_modules/chessground/assets/chessground.cburnett.css"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/chessground/dist/chessground.min.js",
+              "node_modules/chess.js/dist/chess.min.js"
             ],
             "server": "projects/profile/src/main.server.ts",
             "prerender": true,
