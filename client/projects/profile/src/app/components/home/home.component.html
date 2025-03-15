@@ -1,9 +1,11 @@
-<p>home works!</p>
 <div class="row">
-    <div class="col-3">
-
+    <div class="col-6">
+        <app-ag-grid gridLabel="Game History" [data]="games" [columnDefs]="columns"></app-ag-grid>
     </div>
     <div class="col-5">
+        <h2>
+            Player Performance
+        </h2>
         <game-performance></game-performance>
     </div>
 </div>

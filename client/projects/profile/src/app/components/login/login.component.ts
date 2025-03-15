@@ -50,7 +50,7 @@ export class LoginComponent {
         this.alert.showSuccessMessage(`Successfully Logged in! Welcome ${name}`);//To do , save the user details as state using .
         this.store.dispatch(setUser({ user: { name, rank, rating, createdDate, access } }));
         
-        this.router.navigate(access == 'admin' ? ['users'] : ['home'])//to do , this is based on user role on which route to route to.
+        this.router.navigate(['home'])//to do , this is based on user role on which route to route to.
           .then(() => {
             console.log("routed successfully to welcome route");
           })

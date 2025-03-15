@@ -8,3 +8,10 @@ API -
     "password": "root1234",
     "name": "Mahadeo"
 }
+
+psql commands.
+show dbs : \l
+show tables : \dt
+switch to db : \c db_name
+describe table : \d table_name
+create table : create table games(id SERIAL PRIMARY KEY, whiteplayer varchar(100), blackplayer varchar(100), result bit, playeddate varchar(100));

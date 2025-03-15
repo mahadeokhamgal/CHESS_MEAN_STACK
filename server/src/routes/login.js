@@ -42,9 +42,9 @@ route.post('/', async (req, res) => {
                 const options = {
                     httpOnly: true,
                     // secure: true,  // Only works on HTTPS
-                    maxAge: 1000 * 10,
+                    maxAge: 1000 * 10 * 60 * 10, // 10-mins
                     // sameSite: 'Strict'
-                  }
+                }
                 res.status(200).cookie('jwt_token', token, options).json({ message: "Login successfull with", name, rank, rating, access });
             }
             

@@ -3,5 +3,5 @@ import { User } from './user.reducer';
 
 export const setUser = createAction(
   '[User] Set User', 
-  props<{ user: User }>()
+  props<{ user: User | null }>()
 )

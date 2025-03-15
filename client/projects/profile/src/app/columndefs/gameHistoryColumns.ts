@@ -13,14 +13,16 @@ export const gameHistoryolumnDefs: ColDef[] = [
     {
         field: 'winner',
         filter: 'agTextColumnFilter',
+        width: 120
     },
     {
         field: 'moves',
         filter: 'agNumberColumnFilter',
+        width: 120
     },
     {
         field: 'date',
-        headerName: 'Registered Date',
+        headerName: 'Played on',
         filter: 'agDateColumnFilter',
         width: 300
     }

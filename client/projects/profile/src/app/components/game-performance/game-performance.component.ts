@@ -22,7 +22,7 @@ export class GamePerformanceComponent {
       {"red":153, "blue": 102,"green": 255},
       {"red":201, "blue": 203,"green": 207},
     ];
-    this.chartData = [65, 59, 80, 81, 56, 55, 77, 21];
-    this.chartLables = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August'];
+    this.chartData = [65, 59, 80, 92, 56, 55, 77, 21, 44, 23, 67, 78];
+    this.chartLables = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septempber', 'October', 'November', 'December'];
   }
 }

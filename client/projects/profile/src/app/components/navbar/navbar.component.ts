@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Observable } from 'rxjs';
 import { User, UserState } from '../../reducers/user.reducer';
 import { Store } from '@ngrx/store';
@@ -7,6 +7,8 @@ import { selectUser } from '../../reducers/user.selector';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 import { UserProfileComponent } from '../user-profile/user-profile.component';
+import { setUser } from '../../reducers/user.actions';
+import { AlertsService } from '../../services/alerts.service';
 
 @Component({
   selector: 'app-navbar',
@@ -18,7 +20,7 @@ import { UserProfileComponent } from '../user-profile/user-profile.component';
 export class NavbarComponent {
   user$: Observable<User | null> | undefined;
 
-  constructor(private store: Store<{ user: UserState }>, private dialog: MatDialog) { }
+  constructor(private store: Store<{ user: UserState }>, private dialog: MatDialog, private router: Router, private alert: AlertsService) { }
 
   ngOnInit(): void {
     this.user$ = this.store.select(selectUser);
@@ -40,4 +42,9 @@ export class NavbarComponent {
     });
   }
 
+  logOut() {
+    this.store.dispatch(setUser({ user: null }));
+    this.alert.showSuccessMessage("Logout successfull");
+    this.router.navigate(['/login']);
+  }
 }

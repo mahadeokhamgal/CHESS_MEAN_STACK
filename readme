@@ -5,8 +5,8 @@ Chess App.
 To Start.
 client - npm run dev
 server - npm run dev
-mongo - net start mongoDB (windows, mongoDB was default process name)
-posgresql - 
+mongo - net start mongoDB port-27017
+posgresql - psql -h localhost -p 51000 -U postgres
 
 # Client
  Registration. M3
