@@ -30,14 +30,22 @@ export class ChessBoardComponent {
       draggable: {
         enabled: true,
         deleteOnDropOff: false,
+        showGhost: true,
+      },
+      animation: {
+        enabled: true,        // enable piece animations, moving and fading
+        duration: 200,        // animation duration in milliseconds
       },
       movable: {
+        free: true,
+        color: "both",
         events: {
           after: (orig, dest, metadata) => {
             console.log("move happened");//possibilty to use handlemove here.
             this.handleMove(orig, dest);
           }
         },
+        showDests: true,
         rookCastle: true
       },
       events: {
@@ -73,14 +81,14 @@ export class ChessBoardComponent {
   getAscii() {
     return this.chessService.chess.ascii();
   }
-  // Handle the move logic
+
   handleMove(from: string, to: string) {
-    const move = this.chessService.makeMove(from + to); // Format as 'e2e4'
-    if (move) {
-      this.chessground.setPosition(move); // Update the board
+    const newFEN = this.chessService.makeMove(from + to); // Format as 'e2e4'
+    if (newFEN) {//Valid move
+      this.chessground.set({fen: newFEN});
+      this.toggleOrientation();
     } else {
-      this.chessService.restorePreviousState();
-      this.chessground.cancelMove();
+      this.chessground.set({fen: this.chessService.previousFEN})
     }
   }
 
@@ -90,12 +98,17 @@ export class ChessBoardComponent {
   }
 
   gameOver() {
-    this.chessService.gameOver();
+    // this.chessService.gameOver();
+    return false;
   }
 
   ngOnDestroy() {
     if (this.chessService.chess) {
       this.chessService.chess.clear(); // Destroy Chessground instance
     }
+  }
+
+  toggleOrientation() {
+    this.chessground.toggleOrientation();
   }
 }

@@ -23,12 +23,12 @@ export class ChessService {
   makeMove(move: string) {
     this.previousFEN = this.chess.fen();
     try {
-      const result = this.chess.move(move);
-      return result;
+      this.chess.move(move);
+      return this.chess.fen();
     } catch(err) {
       console.warn("Invalid move", move);
+      return null;
     }
-    return null; // Return updated FEN after move
   }
 
   // Get the current board FEN (chess position)
@@ -37,7 +37,7 @@ export class ChessService {
   }
 
   restorePreviousState() {
-    this.chess.load(this.previousFEN); // Load the previous valid FEN
+    // this.chess.load(this.previousFEN); // Load the previous valid FEN
   }
 
   // Check if the game is over
