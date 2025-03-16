@@ -36,7 +36,8 @@
               "projects/profile/src/styles.sass",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/chessground/assets/chessground.base.css",
-              "node_modules/chessground/assets/chessground.cburnett.css"
+              "node_modules/chessground/assets/chessground.cburnett.css",
+              "node_modules/chessground/assets/chessground.brown.css"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",

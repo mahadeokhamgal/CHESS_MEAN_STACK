@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Chessground } from 'chessground';
 import { ChessService } from '../../services/chess.service';
 import { NgIf } from '@angular/common';
+import { Square } from 'chess.js'; // Import Chess.js
 
 @Component({
   selector: 'app-chess-board',
@@ -54,6 +55,7 @@ export class ChessBoardComponent {
 
         select: (key) => {
           console.log("key", key);
+          console.log("Possible moves are", this.chessService.getMoves(key as Square));
         }
       },
       premovable: {
@@ -85,6 +87,7 @@ export class ChessBoardComponent {
     const newFEN = this.chessService.makeMove(from + to); // Format as 'e2e4'
     if (newFEN) {//Valid move
       this.chessground.set({fen: newFEN});
+      console.log(newFEN);
       this.toggleOrientation();
     } else {
       this.chessground.set({fen: this.chessService.previousFEN})
