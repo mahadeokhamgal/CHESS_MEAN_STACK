@@ -41,12 +41,12 @@ export function responseInterceptor(req: HttpRequest<unknown>, next: HttpHandler
     if (event.type === HttpEventType.Response) {
       console.log(req.url, 'returned a response with status', event.status);
       if([HttpStatusCode.Unauthorized, HttpStatusCode.Forbidden].includes(event.status)) {
-        router.navigate(['login'])
+        router.navigate(['access-denied'])
       }
     }
   }, (error) => {
     if (error.status === HttpStatusCode.Unauthorized || error.status === HttpStatusCode.Forbidden) {
-      router.navigate(['login']);
+      router.navigate(['access-denied']);
     }
   }));
 }

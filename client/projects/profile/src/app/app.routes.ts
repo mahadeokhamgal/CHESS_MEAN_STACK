@@ -10,6 +10,7 @@ import { map, take } from 'rxjs';
 import { HomeComponent } from './components/home/home.component';
 import { AlertsService } from './services/alerts.service';
 import { ChessBoardComponent } from './components/chess-board/chess-board.component';
+import { AccessDeniedComponent } from './components/access-denied/access-denied.component';
 
 export const adminRouteAuth: CanActivateFn = (
     next: ActivatedRouteSnapshot,
@@ -26,7 +27,7 @@ export const adminRouteAuth: CanActivateFn = (
                 return true;
             } else {
                 alert.showErrorMessage("User is not authorised to access the route");
-                router.navigate(['/login']);
+                router.navigate(['/access-denied']);
                 return false;
             }
         })
@@ -48,7 +49,7 @@ export const chessUserRouteAuth: CanActivateFn = (
                 return true;
             } else {
                 alert.showErrorMessage("User is not authorised to access the route");
-                router.navigate(['/login']);
+                router.navigate(['/access-denied']);
                 return false;
             }
         })
@@ -58,6 +59,7 @@ export const chessUserRouteAuth: CanActivateFn = (
 export const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'access-denied', component: AccessDeniedComponent },
     { path: 'users', component: UserinventoryComponent, canActivate: [adminRouteAuth] },
     { path: 'home', component: HomeComponent, canActivate: [chessUserRouteAuth] },
     { path: 'play', component: ChessBoardComponent, canActivate: [chessUserRouteAuth] },

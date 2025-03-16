@@ -33,6 +33,6 @@ export const usersColumnDef: ColDef[] = [
         field: 'access',
         filter: 'agTextColumnFilter',
         headerName: 'Access',
-        width: 100
+        width: 180
     }
 ]
