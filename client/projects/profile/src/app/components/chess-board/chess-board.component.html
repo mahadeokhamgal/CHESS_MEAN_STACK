@@ -9,7 +9,8 @@
 
         </div>
         <div class="col-3">
-            <button class="m-2 btn btn-warning" (click)="resetGame()">Reset Game</button>
+            <button class="m-2 btn btn-warning" (click)="this.undoMove()">Undo Move</button>
+            <button class="m-2 btn btn-warning" (click)="this.resetGame()">Reset Game</button>
             <button class="m-2 btn btn-info" (click)="toggleOrientation()">Rotate board</button>
             
             <p *ngIf="this.gameOver()">Game Over!</p>

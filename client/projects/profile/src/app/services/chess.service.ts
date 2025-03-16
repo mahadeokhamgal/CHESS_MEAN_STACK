@@ -40,6 +40,15 @@ export class ChessService {
     // this.chess.load(this.previousFEN); // Load the previous valid FEN
   }
 
+  undoMove() {
+    try {
+      this.chess.undo();
+      return this.chess.fen();
+    } catch(err) {
+      return this.chess.fen();
+    }
+  }
+  
   // Check if the game is over
   gameOver(): boolean {
     this.chess.reset();

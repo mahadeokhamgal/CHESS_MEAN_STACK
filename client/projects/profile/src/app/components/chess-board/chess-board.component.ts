@@ -97,6 +97,11 @@ export class ChessBoardComponent {
     this.chessground.set({fen: newFEN});
   }
 
+  undoMove() {
+    const newFEN = this.chessService.undoMove();
+    this.chessground.set({fen: newFEN});
+  }
+
   gameOver() {
     // this.chessService.gameOver();
     return false;
