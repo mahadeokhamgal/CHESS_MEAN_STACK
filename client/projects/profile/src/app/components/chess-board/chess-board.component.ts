@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Chess } from 'chess.js';
 import { Chessground } from 'chessground';
 import { ChessService } from '../../services/chess.service';
 import { NgIf } from '@angular/common';
@@ -93,8 +92,9 @@ export class ChessBoardComponent {
   }
 
   resetGame() {
-    this.chessService.resetGame(); // Reset the game logic
-    this.chessground.setPosition('start'); // Reset the board
+    this.chessService.resetGame();
+    const newFEN = this.chessService.getFEN()
+    this.chessground.set({fen: newFEN});
   }
 
   gameOver() {

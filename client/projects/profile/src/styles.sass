@@ -1,39 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-@import "../../../node_modules/chessground/assets/chessground.base.css";
-@import "../../../node_modules/chessground/assets/chessground.cburnett.css";
+@import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+@import "../../../node_modules/chessground/assets/chessground.base.css"
+@import "../../../node_modules/chessground/assets/chessground.cburnett.css"
 
 // Styling for form controls when the field is invalid
 input.ng-invalid
-  border-color: #dc3545 !important   // Red border for invalid fields
+  border-color: #dc3545 !important // Red border for invalid fields
   &:focus
-    border-color: #c82333           // Darker red border on focus
+    border-color: #c82333 // Darker red border on focus
 
 // Error message container for invalid fields
 input.ng-invalid.ng-touched
-  + .invalid-feedback
-    display: block      // Show error message when the field is invalid and touched
-    font-size: 0.875rem  // Smaller font size for error messages
-    margin-top: 0.25rem  // Some space above the error message
-
++ .invalid-feedback
+  display: block // Show error message when the field is invalid and touched
+  font-size: 0.875rem // Smaller font size for error messages
+  margin-top: 0.25rem // Some space above the error message
 
 // Optional: Styling the input when it is focused and invalid
 input.ng-invalid:focus
-  border-color: #c82333  // Darker red when focused on an invalid input
-  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25)  // Subtle red shadow to highlight the invalid input
-
+  border-color: #c82333 // Darker red when focused on an invalid input
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25) // Subtle red shadow to highlight the invalid input
 
 div
-    form
-        background-color:#eee
-        border: 1px solid black
-        border-radius: 2%
+  form
+    background-color: #eee
+    border: 1px solid black
+    border-radius: 2%
 
 // Variables for colors
-$success-color: #4CAF50  // Green color for success
-$error-color: #F44336    // Red color for error
-$white-color: #ffffff    // White color for text
+$success-color: #4CAF50 // Green color for success
+$error-color: #F44336 // Red color for error
+$white-color: #ffffff // White color for text
 
 // Success Snackbar Styling
 .success-snackbar
@@ -66,3 +64,15 @@ $white-color: #ffffff    // White color for text
   cursor: pointer
   margin-left: 10px
   font-size: 16px
+
+app-chess-board
+  square.last-move
+    background: burlywood
+    border: 1px solid #000
+
+  // piece
+  //   border: 1px solid #000
+
+  square.selected
+    // border: solid #344556 2px
+    background-color: mediumaquamarine
