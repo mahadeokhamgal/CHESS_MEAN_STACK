@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Chess, Square } from 'chess.js'; // Import Chess.js
+import { Chess, Color, Square } from 'chess.js'; // Import Chess.js
 
 @Injectable({
   providedIn: 'root'
@@ -58,5 +58,9 @@ export class ChessService {
   // Get the possible moves for a piece
   getMoves(square: Square): any[] {
     return this.chess.moves({ square });
+  }
+
+  getTurn(): Color {
+    return this.chess.turn();
   }
 }

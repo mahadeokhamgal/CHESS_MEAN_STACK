@@ -1,19 +1,37 @@
 <div>
     
     <!-- <p>{{ this.getAscii() }}</p> -->
-    <div class="row">
+    <div class="row" *ngIf="isTimeSelected">
         <div class="col-3">
             <h2>Chess Game</h2>
         </div>
         <div class="col-5" id="chess-board" style="height: 660px;aspect-ratio: 1;">
 
         </div>
-        <div class="col-3">
-            <button class="m-2 btn btn-warning" (click)="this.undoMove()">Undo Move</button>
-            <button class="m-2 btn btn-warning" (click)="this.resetGame()">Reset Game</button>
-            <button class="m-2 btn btn-info" (click)="toggleOrientation()">Rotate board</button>
+        <div class="col-3 game-info-container">
+            <div class="game-info-header">
+                <button class="m-1 btn btn-warning" (click)="this.undoMove()">Undo Move</button>
+                <button class="m-1 btn btn-warning" (click)="this.resetGame()">Reset Game</button>
+                <button class="m-1 btn btn-info" (click)="toggleOrientation()">Rotate board</button>
+            </div>
+            <div class="game-info-content" *ngIf="user$ | async as user;">
+                <div class="game-player-clock">
+                    {{opponentTime}}
+                </div>
+                <div class="game-player-profile">
+                    {{user.name}}
+                </div>
+                <div class="game-player-profile">
+                    {{opponent}}
+                </div>
+                <div class="game-player-clock">
+                    {{userTime}}
+                </div>
+            </div>
             
-            <p *ngIf="this.gameOver()">Game Over!</p>
         </div>
+    </div>
+    <div class="row" *ngIf="!isTimeSelected">
+        <div appBackgroundcolor appBgColor="aliceblue" class="col-3 h-25 m-2" *ngFor="let time of timeControls; let i = index" (click)="selectTimeControl(i)">{{time.value}}</div>
     </div>
   </div>
