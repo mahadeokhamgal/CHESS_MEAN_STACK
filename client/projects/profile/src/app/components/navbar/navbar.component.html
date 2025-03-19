@@ -7,19 +7,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: space-between;">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" [routerLink]="['/home']">Home</a>
+                <a class="nav-link" (click)="navigateToUrl('/home')">Home</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" [routerLink]="['/register']">Register</a>
+                <a class="nav-link" (click)="navigateToUrl('/register')">Register</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" [routerLink]="['/login']">Login</a>
+                <a class="nav-link" (click)="navigateToUrl('/login')">Login</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" [routerLink]="['/play']">Play Game</a>
+                <a class="nav-link" (click)="navigateToUrl('/play')">Play Game</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" [routerLink]="['/users']">Users inventory</a>
+                <a class="nav-link" (click)="navigateToUrl('/users')">Users inventory</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -27,8 +27,8 @@
                     Dropdown
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" [routerLink]="['/users']">Users inventory</a>
-                    <a class="dropdown-item" [routerLink]="['/play']">Play Game</a>
+                    <a class="dropdown-item" (click)="navigateToUrl('/users')">Users inventory</a>
+                    <a class="dropdown-item" (click)="navigateToUrl('/play')">Play Game</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item">Something else here</a>
                 </div>

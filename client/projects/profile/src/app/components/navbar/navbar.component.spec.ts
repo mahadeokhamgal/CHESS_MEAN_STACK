@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NavbarComponent } from './navbar.component';
 import { Store } from '@ngrx/store';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, provideRouter, Router, RouterModule } from '@angular/router';
 import { AlertService } from '../../services/alerts.service';
 import { MockStore } from '../../mock-classes/mock-store';
 import { MockRouter } from '../../mock-classes/mock-router';
@@ -16,8 +16,9 @@ describe('NavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavbarComponent, RouterModule],
+      imports: [NavbarComponent],
       providers: [
+        provideRouter([]),
         { provide: Store, useClass: MockStore },
         { provide: MatDialog, useClass: MockMatDialog },
         { provide: Router, useClass: MockRouter },

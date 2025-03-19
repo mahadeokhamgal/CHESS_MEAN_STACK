@@ -47,4 +47,8 @@ export class NavbarComponent {
     this.alert.showSuccessMessage("Logout successfull");
     this.router.navigate(['/login']);
   }
+
+  navigateToUrl(url: string) {
+    this.router.navigate([url])
+  }
 }
