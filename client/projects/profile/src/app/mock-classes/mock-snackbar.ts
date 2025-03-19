@@ -1,8 +1,7 @@
-import { Component } from "@angular/core";
+import { Injectable } from "@angular/core";
 
-@Component({
-  selector: 'app-mock-snackbar',
-  template: ''
+@Injectable({
+  providedIn: 'root'
 })
 export class MockSnackbar {
   open(message: string, action: string, config: any): any {
