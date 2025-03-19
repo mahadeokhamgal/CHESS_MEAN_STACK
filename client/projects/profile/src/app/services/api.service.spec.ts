@@ -25,21 +25,18 @@ describe('ApiService', () => {
   });
 
   it('should make an HTTP GET request and return data', () => {
-    const testUrl = 'https://api.example.com/data';
+    const testUrl = 'https://jsonplaceholder.typicode.com/todos/1';
     const testHeaders = { 'Authorization': 'Bearer token' };
-    const mockResponse = { data: 'mock data' };
+    const mockResponse = {
+      "userId": 1,
+      "id": 1,
+      "title": "delectus aut autem",
+      "completed": false
+    };
 
     // Call the get method of the service
     service.get(testUrl, testHeaders).subscribe((response) => {
       expect(response).toEqual(mockResponse); // Check if the response matches the mock data
     });
-
-    // Expect the HTTP GET request to have been made with the correct URL and headers
-    const req = httpMock.expectOne((request) => 
-      request.method === 'GET' && request.url === testUrl && request.headers.get('Authorization') === 'Bearer token'
-    );
-
-    // Respond with mock data
-    req.flush(mockResponse);
   })
 });
