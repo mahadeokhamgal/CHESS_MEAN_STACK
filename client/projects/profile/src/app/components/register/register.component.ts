@@ -3,11 +3,11 @@ import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModu
 import { NgFor } from '@angular/common';
 import { User } from '../../interfaces/user';
 import { Rank } from '../../enums/rank';
-import { ApiServiceService } from '../../services/api-service.service';
+import { ApiService } from '../../services/api.service';
 import { CONFIG } from '../../../config/config';
 import { Router } from '@angular/router';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { AlertsService } from '../../services/alerts.service';
+import { AlertService } from '../../services/alerts.service';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +20,7 @@ export class RegisterComponent {
   public user: User;
   public ranks: String[];
 
-  constructor(public apiService: ApiServiceService, public router: Router, public alert: AlertsService) {
+  constructor(public apiService: ApiService, public router: Router, public alert: AlertService) {
     this.user = {
       name: "Untitled ...",
       rating: 800,

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { User } from '../../interfaces/user';
-import { ApiServiceService } from '../../services/api-service.service';
+import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
-import { AlertsService } from '../../services/alerts.service';
+import { AlertService } from '../../services/alerts.service';
 import { Rank } from '../../enums/rank';
 import { CONFIG } from '../../../config/config';
 import { Store } from '@ngrx/store';
@@ -18,8 +18,8 @@ import { setUser } from '../../reducers/user.actions';
 export class LoginComponent {
   public loginForm: FormGroup;
   public user: User;
-
-  constructor(public apiService: ApiServiceService, public router: Router, public alert: AlertsService, private store: Store) {
+  
+  constructor(public apiService: ApiService, public router: Router, public alert: AlertService, private store: Store) {
     this.user = {
       name: "Untitled ...",
       rating: 800,

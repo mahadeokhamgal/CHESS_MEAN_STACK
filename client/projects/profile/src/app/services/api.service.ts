@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { User } from '../interfaces/user';
 
 @Injectable()
-export class ApiServiceService {
+export class ApiService {
 
   constructor(private http: HttpClient) {
     console.log("API Service constructor !");

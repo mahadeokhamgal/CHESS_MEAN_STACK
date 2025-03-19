@@ -101,6 +101,7 @@ MONGO_DB = "/user"
 Error on console on ag-grid load.
 
 # To do
+Add socketio to update moves and messages on multiplayer in realtime.
 Use SSR to use pagination API's.
 Token refreshing to 10 mins.
 Passowrd complexity.

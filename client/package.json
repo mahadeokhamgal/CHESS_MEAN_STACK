@@ -8,6 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test-profile": "ng test profile",
     "serve:ssr:profile": "node dist/profile/server/server.mjs"
   },
   "private": true,

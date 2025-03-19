@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ApiServiceService } from '../../services/api-service.service';
+import { ApiService } from '../../services/api.service';
 import { CONFIG } from '../../../config/config';
-import { AlertsService } from '../../services/alerts.service';
+import { AlertService } from '../../services/alerts.service';
 import { User } from '../../reducers/user.reducer';
 import { ColDef } from 'ag-grid-community';
 
@@ -19,7 +19,7 @@ export class UserinventoryComponent {
   public users: User[];
   public columnDefs: ColDef[];
 
-  constructor(private apiService: ApiServiceService, private alert: AlertsService) {
+  constructor(private apiService: ApiService, private alert: AlertService) {
     this.users = [];
     this.columnDefs = usersColumnDef;
   }

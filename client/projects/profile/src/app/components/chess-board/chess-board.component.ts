@@ -9,7 +9,7 @@ import { User, UserState } from '../../reducers/user.reducer';
 import { selectUser } from '../../reducers/user.selector';
 import { Store } from '@ngrx/store';
 import { TimeControl } from '../../interfaces/timecontrols.interface';
-import { AlertsService } from '../../services/alerts.service';
+import { AlertService } from '../../services/alerts.service';
 
 @Component({
   selector: 'app-chess-board',

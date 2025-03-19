@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MockSnackbar } from './mock-snackbar';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AlertService {
-  constructor(private snackBar: MatSnackBar) { }
+export class MockAlert {
+
+  constructor(private snackBar: MockSnackbar) { }
 
   showSuccessMessage(message: string = 'Your action was successful!') {
     this.snackBar.open(message, 'Close', {

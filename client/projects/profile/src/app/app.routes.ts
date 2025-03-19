@@ -8,7 +8,7 @@ import { Store } from '@ngrx/store';
 import { selectIsAdmin, selectIsChessUser } from './reducers/user.selector';
 import { map, take } from 'rxjs';
 import { HomeComponent } from './components/home/home.component';
-import { AlertsService } from './services/alerts.service';
+import { AlertService } from './services/alerts.service';
 import { ChessBoardComponent } from './components/chess-board/chess-board.component';
 import { AccessDeniedComponent } from './components/access-denied/access-denied.component';
 
@@ -18,7 +18,7 @@ export const adminRouteAuth: CanActivateFn = (
 ) => {
     const store = inject(Store<UserState>);
     const router = inject(Router);
-    const alert = inject(AlertsService);
+    const alert = inject(AlertService);
 
     return store.select(selectIsAdmin).pipe(
         take(1), // Only need the latest value
@@ -40,7 +40,7 @@ export const chessUserRouteAuth: CanActivateFn = (
 ) => {
     const store = inject(Store<UserState>);
     const router = inject(Router);
-    const alert = inject(AlertsService);
+    const alert = inject(AlertService);
     
     return store.select(selectIsChessUser).pipe(
         take(1), // Only need the latest value

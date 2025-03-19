@@ -4,7 +4,7 @@ import { provideRouter, Router } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { HttpEventType, HttpStatusCode, withInterceptors } from '@angular/common/http';
-import { ApiServiceService } from './services/api-service.service';
+import { ApiService } from './services/api.service';
 import { provideHttpClient } from '@angular/common/http';
 import { HttpEvent, HttpHandlerFn, HttpRequest } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
@@ -16,7 +16,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes), provideClientHydration(withEventReplay()),
     provideHttpClient(withInterceptors([loggingInterceptor, httpInterceptor, responseInterceptor])),
-    ApiServiceService,
+    ApiService,
     provideStore(),
     provideState({ name: 'user', reducer: userReducer })
   ]

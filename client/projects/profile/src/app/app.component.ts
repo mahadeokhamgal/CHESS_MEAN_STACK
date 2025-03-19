@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { User, UserState } from './reducers/user.reducer';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { AsyncPipe, NgIf } from '@angular/common';
 import { selectUser } from './reducers/user.selector';
-import { BackgroundcolorDirective } from './directives/backgroundcolor.directive';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent],
+  imports: [RouterModule, RouterOutlet, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass'
 })
