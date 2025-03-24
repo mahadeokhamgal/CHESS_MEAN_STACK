@@ -18,7 +18,6 @@ describe('NavbarComponent', () => {
     await TestBed.configureTestingModule({
       imports: [NavbarComponent],
       providers: [
-        provideRouter([]),
         { provide: Store, useClass: MockStore },
         { provide: MatDialog, useClass: MockMatDialog },
         { provide: Router, useClass: MockRouter },

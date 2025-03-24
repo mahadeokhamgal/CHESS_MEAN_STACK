@@ -21,14 +21,4 @@ export class AppComponent {
   ngOnInit(): void {
     this.user$ = this.store.select(selectUser);
   }
-
-  ngOnChanges() {
-    // console.info("onchanges detected in app component !");
-  }
-
-  ngDoCheck() {
-    // console.info("ngdocheck detected in app component");
-  }
-
-  ngAfterViewInit() {}
 }

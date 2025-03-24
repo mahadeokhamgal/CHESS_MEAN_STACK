@@ -8,6 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test-coverage": "ng test --code-coverage",
     "test-profile": "ng test profile",
     "serve:ssr:profile": "node dist/profile/server/server.mjs"
   },
